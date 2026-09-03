@@ -1,0 +1,176 @@
+/* reseteo */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9ecf4;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+/* formato contenedores layout */
+.contenedor,
+.header,
+.navbar,
+.contenido,
+.sidebar,
+.espacio1,
+.espacio2,
+.footer {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* navbar */
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+
+}
+
+.navbar li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: .5em 1em;
+}
+
+/* contenedor principal */
+
+.contenedor {
+  width: 90%;
+
+  max-width: 1200px;
+
+  margin: 20px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat (4, 1fr);
+
+  grid-template-rows: repeat(6, auto);
+
+  grid-template-areas:
+
+    "header header header header"
+
+    "nav nav nav nav"
+
+    "contenido contenido contenido side"
+
+    "contenido contenido contenido side"
+
+    "espacio1 espacio2 espacio2 side"
+
+    "footer footer footer footer"
+  ;
+  gap: 15px;
+
+}
+
+/* contenedores */
+.header {
+  background-color: #12203e;
+  grid-area: header;
+  font-size: 2rem;
+}
+
+.navbar {
+
+  padding: 10px;
+  background-color: #12203E;
+  grid-area: nav;
+
+
+}
+
+.contenido {
+  background-color: rgb(163, 13, 143);
+  grid-area: contenido;
+}
+
+.sidebar {
+  background-color: #faa43d;
+  grid-area: side;
+
+}
+
+.espacio1 {
+  background-color: #55a8fd;
+  grid-area: espacio1;
+
+}
+
+.espacio2 {
+  background-color: #0b4885;
+  grid-area: espacio2;
+}
+
+.footer {
+  background-color: rgb(182, 45, 45);
+  grid-area: footer;
+
+}
+
+/* responsive para tablet */
+
+@media (max-width:900px) {
+  .header {
+    background-color: #97b8ff;
+    font-size: 1, 5rem;
+
+  }
+
+  contenedor {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat (6, auto);
+    gap: 10px;
+    grid-template-areas:
+      "header"
+      "nav nav"
+      "contenido side"
+      "contenido side"
+      "espacio1"
+      "espacio2"
+      "footer"
+    ;
+  }
+
+  .navbar ul {
+
+    flex-direction: column;
+
+  }
+
+}
+
+/* responsive para celular */
+
+@media (max-width:480px) {
+
+  .header {
+    background-color: #6e0505;
+    font-size: 1rem;
+  }
+
+
+  .contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (7, auto);
+    gap: 5px;
+    grid-template-areas:
+      "header"
+      "nav"
+      "contenido"
+      "side"
+      "espacio1"
+      "espacio2"
+      "footer"
+    ;
+  }
+
+
+}
